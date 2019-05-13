@@ -2,6 +2,7 @@ package br.com.fatec.dashboard.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,7 @@ public class AcessoController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping("/register")
+	@PostMapping(path = "/register", consumes = "application/json", produces = MediaType.TEXT_PLAIN_VALUE)
 	public ResponseEntity<String> createNewUser(@RequestBody User usuario){
 		try {			
 			userService.save(usuario);
