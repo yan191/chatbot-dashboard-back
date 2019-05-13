@@ -20,13 +20,14 @@ public class AcessoController {
 	UserService userService;
 	
 	@PostMapping("/register")
-	public ResponseEntity<String> createNewUser(@RequestBody User usuario){
+	public ResponseEntity<User> createNewUser(@RequestBody User usuario){
+		User user;
 		try {			
-			userService.save(usuario);
+			user = userService.save(usuario);
 		}catch(Exception e) {
-			return ResponseEntity.badRequest().body("erro");
+			return ResponseEntity.badRequest().body(null);
 		}
-		return ResponseEntity.ok().body("sucesso");
+		return ResponseEntity.ok().body(user);
 	}
 	
 	@GetMapping("/user/:username")

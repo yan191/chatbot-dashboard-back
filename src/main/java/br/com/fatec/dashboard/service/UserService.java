@@ -20,7 +20,7 @@ public class UserService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-	public void save(User usuario) {
+	public User save(User usuario) {
 		User user = new User();
 		user.setUsername(usuario.getUsername());
 	    user.setPassword(passwordEncoder.encode(usuario.getPassword()));
@@ -28,6 +28,7 @@ public class UserService {
 	    user.setNomeCompleto(usuario.getNomeCompleto());
 	    user.setEmail(usuario.getEmail());
 	    userRepository.save(user);
+	    return user;
 	}
 	
 	public User getByUsername(String username) {
