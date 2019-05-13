@@ -31,7 +31,7 @@ public class AcessoController {
 		return ResponseEntity.ok().body(user);
 	}
 	
-	@GetMapping("/user/:username")
+	@GetMapping("/user")
 	public ResponseEntity<User> getUserByUsername(@RequestParam("username") String username){
 		User user;
 		try {
