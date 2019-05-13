@@ -27,16 +27,17 @@ public class AcessoController {
 		}catch(Exception e) {
 			return ResponseEntity.badRequest().body(null);
 		}
+		user.setPassword("");
 		return ResponseEntity.ok().body(user);
 	}
 	
 	@GetMapping("/user/:username")
-	public ResponseEntity getUserByUsername(@RequestParam("username") String username){
+	public ResponseEntity<User> getUserByUsername(@RequestParam("username") String username){
 		User user;
 		try {
 			user = userService.getByUsername(username);
 		}catch(Exception e) {
-			return ResponseEntity.badRequest().body("Não foi possivel recuperar informações do usuário.");
+			return ResponseEntity.badRequest().body(null);
 		}
 		return ResponseEntity.ok().body(user);
 	}
