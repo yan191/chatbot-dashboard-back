@@ -29,5 +29,9 @@ public class UserService {
 	    user.setEmail(usuario.getEmail());
 	    userRepository.save(user);
 	}
+	
+	public User getByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
 
 }
