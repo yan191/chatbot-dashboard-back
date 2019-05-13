@@ -35,6 +35,8 @@ public class User implements Serializable{
             joinColumns = @JoinColumn(name = "user_id") ,
             inverseJoinColumns = @JoinColumn(name = "authority_id"))
     private List<Authority> authorities;
+    private String nomeCompleto = "";
+    private String email = "";
     public User() {
     }
 	public Integer getId() {
@@ -66,6 +68,18 @@ public class User implements Serializable{
 	}
 	public void setAuthorities(List<Authority> authorities) {
 		this.authorities = authorities;
+	}
+	public String getNomeCompleto() {
+		return nomeCompleto;
+	}
+	public void setNomeCompleto(String nomeCompleto) {
+		this.nomeCompleto = nomeCompleto;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
     
 }
