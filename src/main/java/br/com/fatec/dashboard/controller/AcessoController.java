@@ -39,6 +39,7 @@ public class AcessoController {
 		}catch(Exception e) {
 			return ResponseEntity.badRequest().body(null);
 		}
+		user.setPassword("");
 		return ResponseEntity.ok().body(user);
 	}
 	
