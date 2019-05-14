@@ -19,7 +19,6 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 	
-	@NotEmpty
 	@Enumerated(EnumType.STRING)
 	private ExpectationStatus expectation;
 	private Integer rating;
