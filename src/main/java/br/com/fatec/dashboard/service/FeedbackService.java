@@ -1,5 +1,7 @@
 package br.com.fatec.dashboard.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,10 @@ public class FeedbackService {
 		feed.setRating(feedback.getRating());
 		feedbackRepository.save(feed);
 		return feed;
+	}
+	
+	public List<Feedback> getAllFeedback() {
+		return feedbackRepository.findAll();
 	}
 
 }
