@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 		.authorizeRequests()
 		.antMatchers("/","/publico*").permitAll()
 		.antMatchers("/teste").permitAll()
+		.antMatchers(HttpMethod.POST,"/responder").permitAll()
 		.antMatchers(HttpMethod.POST,"/register").permitAll()
 		.antMatchers(HttpMethod.POST, "/login").permitAll()
 		.anyRequest().authenticated()
