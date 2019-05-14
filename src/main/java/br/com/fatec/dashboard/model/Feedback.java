@@ -21,8 +21,8 @@ public class Feedback {
 	
 	@Enumerated(EnumType.STRING)
 	private ExpectationStatus expectation;
-	private Integer rating;
-	private Integer timePlayed;
+	private Integer rating = 0;
+	private Integer timePlayed = 0;
 	
 	public Integer getId() {
 		return id;
