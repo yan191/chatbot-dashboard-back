@@ -26,5 +26,9 @@ public class FeedbackService {
 	public List<Feedback> getAllFeedback() {
 		return feedbackRepository.findAll();
 	}
+	
+	public List<Integer> getScore() {
+		return feedbackRepository.findAllScore();
+	}
 
 }

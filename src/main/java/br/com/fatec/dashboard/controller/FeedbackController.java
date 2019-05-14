@@ -29,5 +29,11 @@ public class FeedbackController {
 		List<Feedback> feedbacks = feedbackService.getAllFeedback();
 		return ResponseEntity.ok().body(feedbacks);
 	}
+	
+	@GetMapping("/scores")
+	public ResponseEntity<List<Integer>> getAllScore(){
+		List<Integer> scores = feedbackService.getScore();
+		return ResponseEntity.ok().body(scores);
+	}
 
 }
